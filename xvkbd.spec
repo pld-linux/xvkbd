@@ -1,5 +1,5 @@
 Summary:	Virtual keyboard for X Window System
-Summary(pl):	Wirtualna klawiadura dla systemu X Window
+Summary(pl):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
 Version:	2.5
 %define	rel	a
