@@ -1,13 +1,12 @@
 Summary:	Virtual keyboard for X Window System
 Summary(pl):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
-Version:	2.5
-%define	rel	a
-Release:	0.%{rel}.1
+Version:	2.7a
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://homepage3.nifty.com/tsato/xvkbd/xvkbd-%{version}%{rel}.tar.gz
-# Source0-md5:	792cbca00c96b6ff54828a0a02f3a621
+Source0:	http://homepage3.nifty.com/tsato/xvkbd/xvkbd-%{version}.tar.gz
+# Source0-md5:	8e8d4d7fba0b1d90a17ade0c65af727c
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
 BuildRequires:	Xaw3d-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,7 +24,7 @@ System u³atwiaj±c± wprowadzanie znaków na wej¶cie innych klientów
 (programów) poprzez klikanie na klawiaturze wy¶wietlonej na ekranie.
 
 %prep
-%setup -q -n %{name}-%{version}%{rel}
+%setup -q
 
 %build
 xmkmf
