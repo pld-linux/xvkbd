@@ -1,17 +1,18 @@
 Summary:	Virtual keyboard for X Window System
 Summary(pl):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
-Version:	2.7a
+Version:	2.8
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://homepage3.nifty.com/tsato/xvkbd/xvkbd-%{version}.tar.gz
-# Source0-md5:	8e8d4d7fba0b1d90a17ade0c65af727c
+# Source0-md5:	d00d367a8158ccd04ff21f2fc35dafe1
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
 BuildRequires:	Xaw3d-devel
+BuildRequires:	xorg-lib-libXtst-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_appdefsdir	/usr/X11R6/lib/X11/app-defaults
+%define		_appdefsdir	/usr/share/X11/app-defaults
 
 %description
 xvkbd is a virtual (graphical) keyboard program for X Window System
@@ -37,6 +38,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	BINDIR=%{_bindir} \
+	CONFDIR=%{_datadir}/X11 \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
