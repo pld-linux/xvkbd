@@ -1,5 +1,5 @@
 Summary:	Virtual keyboard for X Window System
-Summary(pl.UTF-8):   Wirtualna klawiatura dla systemu X Window
+Summary(pl.UTF-8):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
 Version:	2.8
 Release:	1
