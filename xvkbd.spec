@@ -1,5 +1,5 @@
 Summary:	Virtual keyboard for X Window System
-Summary(pl):	Wirtualna klawiatura dla systemu X Window
+Summary(pl.UTF-8):   Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
 Version:	2.8
 Release:	1
@@ -19,10 +19,10 @@ xvkbd is a virtual (graphical) keyboard program for X Window System
 which provides facility to enter characters onto other clients
 (softwares) by clicking on a keyboard displayed on the screen.
 
-%description -l pl
-xvkbd to program z wirtualn± (graficzn±) klawiatur± dla X Window
-System u³atwiaj±c± wprowadzanie znaków na wej¶cie innych klientów
-(programów) poprzez klikanie na klawiaturze wy¶wietlonej na ekranie.
+%description -l pl.UTF-8
+xvkbd to program z wirtualnÄ… (graficznÄ…) klawiaturÄ… dla X Window
+System uÅ‚atwiajÄ…cÄ… wprowadzanie znakÃ³w na wejÅ›cie innych klientÃ³w
+(programÃ³w) poprzez klikanie na klawiaturze wyÅ›wietlonej na ekranie.
 
 %prep
 %setup -q
