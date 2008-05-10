@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=xvkbd
+Exec=xvkbd
+Icon=xvkbd
+Type=Application
+Comment=Virtual, graphical keyboard for X Window System
+Terminal=false
+Categories=Utility;
