@@ -13,6 +13,7 @@ URL:		http://homepage3.nifty.com/tsato/xvkbd/
 BuildRequires:	Xaw3d-devel
 BuildRequires:	xorg-cf-files
 BuildRequires:	xorg-lib-libXtst-devel
+BuildRequires:	xorg-lib-libXaw-devel
 BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
