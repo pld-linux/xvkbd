@@ -40,12 +40,14 @@ xmkmf
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	BINDIR=%{_bindir} \
 	CONFDIR=%{_datadir}/X11 \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -p %{name}.man $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
 install -D %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
 install -D %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
@@ -59,3 +61,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_appdefsdir}/XVkbd*
 %{_desktopdir}/%{name}.desktop
 %{_pixmapsdir}/%{name}.png
+%{_mandir}/man1/%{name}.1*
