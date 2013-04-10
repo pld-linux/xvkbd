@@ -1,12 +1,12 @@
 Summary:	Virtual keyboard for X Window System
 Summary(pl.UTF-8):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
-Version:	3.3
+Version:	3.4a
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://homepage3.nifty.com/tsato/xvkbd/xvkbd-%{version}.tar.gz
-# Source0-md5:	8495402211a610293563a749bb45a0f0
+# Source0-md5:	3d996ba9f84b5ed2392f9809ada22711
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 URL:		http://homepage3.nifty.com/tsato/xvkbd/
