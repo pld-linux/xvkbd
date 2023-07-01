@@ -1,20 +1,21 @@
 Summary:	Virtual keyboard for X Window System
 Summary(pl.UTF-8):	Wirtualna klawiatura dla systemu X Window
 Name:		xvkbd
-Version:	3.4a
+Version:	4.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://homepage3.nifty.com/tsato/xvkbd/xvkbd-%{version}.tar.gz
-# Source0-md5:	3d996ba9f84b5ed2392f9809ada22711
+Source0:	http://t-sato.in.coocan.jp/xvkbd/xvkbd-%{version}.tar.gz
+# Source0-md5:	64324fe3b4827eb022377c27844dfa8f
 Source1:	%{name}.desktop
 Source2:	%{name}.png
-URL:		http://homepage3.nifty.com/tsato/xvkbd/
+URL:		http://t-sato.in.coocan.jp/xvkbd/
 BuildRequires:	Xaw3d-devel
-BuildRequires:	xorg-cf-files
+BuildRequires:	pkgconfig
+BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-lib-libXmu-devel
+BuildRequires:	xorg-lib-libXt-devel
 BuildRequires:	xorg-lib-libXtst-devel
-BuildRequires:	xorg-lib-libXaw-devel
-BuildRequires:	xorg-util-imake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_appdefsdir	/usr/share/X11/app-defaults
@@ -33,32 +34,29 @@ System ułatwiającą wprowadzanie znaków na wejście innych klientów
 %setup -q
 
 %build
-xmkmf
-%{__make} \
-	CC="%{__cc}" \
-	CDEBUGFLAGS="%{rpmcflags}"
+%configure
+
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT%{_appdefsdir}
 
 %{__make} install \
-	BINDIR=%{_bindir} \
-	CONFDIR=%{_datadir}/X11 \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -p %{name}.man $RPM_BUILD_ROOT%{_mandir}/man1/%{name}.1
-install -D %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
-install -D %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+install -Dp %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/%{name}.desktop
+install -Dp %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
-%attr(755,root,root) %{_bindir}/%{name}
+%doc ChangeLog README
+%attr(755,root,root) %{_bindir}/xvkbd
+%{_datadir}/xvkbd
 %{_appdefsdir}/XVkbd*
-%{_desktopdir}/%{name}.desktop
-%{_pixmapsdir}/%{name}.png
-%{_mandir}/man1/%{name}.1*
+%{_desktopdir}/xvkbd.desktop
+%{_pixmapsdir}/xvkbd.png
+%{_mandir}/man1/xvkbd.1*
